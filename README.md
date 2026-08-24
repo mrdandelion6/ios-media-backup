@@ -32,11 +32,19 @@ Backs up all JPG/JPEG files (edited photos, downloaded images, photos saved in J
 
 I use `ifuse` to mount my iPhone on Linux.
 
+### Arch
+
 ```sh
 sudo pacman -S libimobiledevice ifuse usbmuxd
 
 # check if usbmuxd is available
 systemctl status usbmuxd
+```
+
+### Ubuntu
+
+```sh
+sudo apt install ifuse libimobiledevice-utils usbmuxd imagemagick libheif-plugin-libde265 libheif-examples
 ```
 
 ## Usage
@@ -58,7 +66,7 @@ sudo ifuse -o allow_other /mnt/iphone
 ### All scripts use the same argument pattern:
 
 ```sh
-Usage: ./script_name.sh <source_directory1> [source_directory2] ... <destination_directory>
+Usage: ./script_name.sh <source_directory1> <source_directory2> ... <destination_directory>
 ```
 
 ### Examples:
